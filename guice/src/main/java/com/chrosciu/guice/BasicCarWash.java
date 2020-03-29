@@ -1,11 +1,10 @@
-package com.chrosciu.sid;
+package com.chrosciu.guice;
 
-public class WaxCarWash implements Washing {
+public class BasicCarWash implements Washing {
     @Override
     public void wash() {
         washBody();
         washWindows();
-        waxBody();
     }
 
     private void washBody() {
@@ -14,9 +13,5 @@ public class WaxCarWash implements Washing {
 
     private void washWindows() {
         System.out.println("Washing windows");
-    }
-
-    private void waxBody() {
-        System.out.println("Waxing body");
     }
 }

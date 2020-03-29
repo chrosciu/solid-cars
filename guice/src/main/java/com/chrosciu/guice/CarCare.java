@@ -1,11 +1,19 @@
 package com.chrosciu.guice;
 
+import javax.inject.Inject;
+
 public class CarCare {
-    private ComprehensiveCarCareCenter careCenter = new ComprehensiveCarCareCenter();
+    @Inject
+    private LiquidChecking liquidChecking;
+    @Inject
+    private Washing washing;
+    @Inject
+    private Vacuuming vacuuming;
 
     public void care() {
-        careCenter.checkLiquids();
-        careCenter.wash();
-        careCenter.vacuum();
+        liquidChecking.checkLiquids();
+        washing.wash();
+        vacuuming.vacuum();
     }
+
 }

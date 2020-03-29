@@ -1,6 +1,10 @@
 package com.chrosciu.guice;
 
-public class WaxCarWash {
+import javax.inject.Singleton;
+
+@Singleton
+public class WaxCarWash implements Washing {
+    @Override
     public void wash() {
         washBody();
         washWindows();
