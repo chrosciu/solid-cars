@@ -1,34 +1,12 @@
 package com.chrosciu.delegate;
 
-public class Car {
-    protected boolean engineStarted = false;
+import lombok.experimental.Delegate;
 
-    public void startEngine() {
-        System.out.println("Starting engine");
-        engineStarted = true;
-    }
+public class Car implements Driveable {
+    @Delegate
+    private final BaseDriveable baseDriveable = new BaseDriveable(this::driveWithReport);
 
-    public void drive(int km) {
-        checkIfEngineStarted();
-        driveWithReport(km);
-    }
-
-    public void stopEngine() {
-        System.out.println("Stopping engine");
-        engineStarted = false;
-    }
-
-    public void reportEngineState() {
-        System.out.println("Engine is " + (engineStarted ? "started" : "stopped"));
-    }
-
-    protected void driveWithReport(int km) {
+    private void driveWithReport(int km) {
         System.out.println("Driving for: " + km + " km");
-    }
-
-    private void checkIfEngineStarted() {
-        if (!engineStarted) {
-            throw new IllegalStateException("Cannot drive without started engine!");
-        }
     }
 }

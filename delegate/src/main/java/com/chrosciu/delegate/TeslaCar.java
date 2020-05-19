@@ -1,10 +1,13 @@
 package com.chrosciu.delegate;
 
 import com.chrosciu.weather.Weather;
+import lombok.experimental.Delegate;
 
-public class TeslaCar extends Car {
-    @Override
-    protected void driveWithReport(int km) {
+public class TeslaCar implements Driveable {
+    @Delegate
+    private final BaseDriveable baseDriveable = new BaseDriveable(this::driveWithReport);
+
+    private void driveWithReport(int km) {
         if (Weather.getInstance().getTemperature() < 0) {
             throw new IllegalStateException("Too cold for drive !");
         }
