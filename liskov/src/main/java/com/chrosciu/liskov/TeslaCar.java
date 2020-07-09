@@ -1,7 +1,5 @@
 package com.chrosciu.liskov;
 
-import com.chrosciu.weather.Weather;
-
 public class TeslaCar extends Car {
     @Override
     protected void driveWithReport(int km) {
