@@ -11,10 +11,8 @@
     <modules>
         <module>guice</module>
         <module>liskov</module>
-        <module>delegate</module>
         <module>ocp</module>
         <module>sid</module>
-        <module>weather</module>
     </modules>
 
     <properties>

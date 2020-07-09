@@ -24,13 +24,9 @@ Exercises are included in `CarRide` class and solution is available on `solution
 
 # Extras
 
-Additionally there are two extra parts:
+Additionally there is one extra part:
 
 ## guice
 
 This is `sid` part rewritten with Guice framework - it shows how one can use dependency injection mechanism declaratively
 
-## delegate
-
-This is `liskov` part rewritten with `@Delegate` annotation from Lombok library. 
-It is an example how to implement composition over inheritance principle in Java
