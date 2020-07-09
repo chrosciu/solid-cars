@@ -1,4 +1,4 @@
-package com.chrosciu.weather;
+package com.chrosciu.liskov;
 
 import lombok.AccessLevel;
 import lombok.Getter;
