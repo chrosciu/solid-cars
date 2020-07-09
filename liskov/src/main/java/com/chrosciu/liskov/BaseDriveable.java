@@ -1,28 +1,37 @@
 package com.chrosciu.liskov;
 
-public abstract class BaseCar {
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public final class BaseDriveable implements Driveable {
+    @NonNull
+    private final DrivingStrategy drivingStrategy;
+
     protected boolean engineStarted = false;
 
+    @Override
     public void startEngine() {
         System.out.println("Starting engine");
         engineStarted = true;
     }
 
+    @Override
     public void drive(int km) {
         checkIfEngineStarted();
-        driveWithReport(km);
+        drivingStrategy.driveWithReport(km);
     }
 
+    @Override
     public void stopEngine() {
         System.out.println("Stopping engine");
         engineStarted = false;
     }
 
+    @Override
     public void reportEngineState() {
         System.out.println("Engine is " + (engineStarted ? "started" : "stopped"));
     }
-
-    protected abstract void driveWithReport(int km);
 
     private void checkIfEngineStarted() {
         if (!engineStarted) {

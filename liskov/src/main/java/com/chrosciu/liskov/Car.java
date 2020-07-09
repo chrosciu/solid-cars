@@ -1,8 +1,31 @@
 package com.chrosciu.liskov;
 
-public class Car extends BaseCar {
+import lombok.experimental.Delegate;
+
+public class Car implements Driveable {
+    private final BaseDriveable baseDriveable = new BaseDriveable(this::driveWithReport);
+
     @Override
-    protected void driveWithReport(int km) {
+    public void startEngine() {
+        baseDriveable.startEngine();
+    }
+
+    @Override
+    public void drive(int km) {
+        baseDriveable.drive(km);
+    }
+
+    @Override
+    public void stopEngine() {
+        baseDriveable.stopEngine();
+    }
+
+    @Override
+    public void reportEngineState() {
+        baseDriveable.reportEngineState();
+    }
+
+    private void driveWithReport(int km) {
         System.out.println("Driving for: " + km + " km");
     }
 }
