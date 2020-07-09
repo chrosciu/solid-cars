@@ -18,7 +18,6 @@ public class ComprehensiveCarCareCenter {
         checkOil();
         checkWindscreenWasher();
         checkBrakeFluid();
-        //TODO: Add coolant check
     }
 
     private void checkOil() {
