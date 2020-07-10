@@ -1,12 +1,18 @@
 package com.chrosciu.sid;
 
-import lombok.RequiredArgsConstructor;
+import javax.inject.Inject;
 
-@RequiredArgsConstructor
 public class CarCare {
     private final LiquidChecking liquidChecking;
     private final Washing washing;
     private final Vacuuming vacuuming;
+
+    @Inject
+    public CarCare(LiquidChecking liquidChecking, Washing washing, Vacuuming vacuuming) {
+        this.liquidChecking = liquidChecking;
+        this.washing = washing;
+        this.vacuuming = vacuuming;
+    }
 
     public void care() {
         liquidChecking.checkLiquids();

@@ -1,11 +1,14 @@
 package com.chrosciu.sid;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Module;
+
 public class Main {
     public static void main(String[] args) {
-        LiquidChecking liquidChecking = new LiquidCheck();
-        Washing washing = new WaxCarWash();
-        Vacuuming vacuuming = new Vacuum();
-        CarCare carCare = new CarCare(liquidChecking, washing, vacuuming);
+        Module module = new CarCareModule();
+        Injector injector = Guice.createInjector(module);
+        CarCare carCare = injector.getInstance(CarCare.class);
         carCare.care();
     }
 }
