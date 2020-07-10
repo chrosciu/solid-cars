@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>guice</module>
         <module>liskov</module>
         <module>ocp</module>
         <module>sid</module>
