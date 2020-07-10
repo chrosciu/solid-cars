@@ -1,3 +1,5 @@
+package com.chrosciu.ocp;
+
 import com.chrosciu.ocp.Car;
 import com.chrosciu.ocp.CarCriteria;
 import com.chrosciu.ocp.CarRepository;
