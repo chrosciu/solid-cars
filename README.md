@@ -22,11 +22,4 @@ Last part of exercises - about Liskov substitution principle.
 
 Exercises are included in `CarRide` class and solution is available on `solution-liskov` branch
 
-# Extras
-
-Additionally there is one extra part:
-
-## guice
-
-This is `sid` part rewritten with Guice framework - it shows how one can use dependency injection mechanism declaratively
 
