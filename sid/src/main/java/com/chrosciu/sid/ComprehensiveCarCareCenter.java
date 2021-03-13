@@ -1,6 +1,7 @@
 package com.chrosciu.sid;
 
-public class ComprehensiveCarCareCenter {
+public class ComprehensiveCarCareCenter implements CarCaring {
+    @Override
     public void wash() {
         washBody();
         washWindows();
@@ -14,6 +15,7 @@ public class ComprehensiveCarCareCenter {
         System.out.println("Washing windows");
     }
 
+    @Override
     public void checkLiquids() {
         checkOil();
         checkWindscreenWasher();
@@ -32,6 +34,7 @@ public class ComprehensiveCarCareCenter {
         System.out.println("Checking brake fluid");
     }
 
+    @Override
     public void vacuum() {
         vacuumDashboard();
         vacuumSeats();

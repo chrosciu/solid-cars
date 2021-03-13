@@ -5,18 +5,18 @@ import org.mockito.Mockito;
 
 public class CarCareTest {
 
-    private ComprehensiveCarCareCenter careCenter = Mockito.mock(ComprehensiveCarCareCenter.class);
+    private CarCaring carCaring = Mockito.mock(CarCaring.class);
 
-    private CarCare carCare = new CarCare(careCenter);
+    private CarCare carCare = new CarCare(carCaring);
 
     @Test
     public void shouldCheckLiquidWashAndVacuum() {
         //when
         carCare.care();
         //then
-        Mockito.verify(careCenter).wash();
-        Mockito.verify(careCenter).checkLiquids();
-        Mockito.verify(careCenter).vacuum();
+        Mockito.verify(carCaring).wash();
+        Mockito.verify(carCaring).checkLiquids();
+        Mockito.verify(carCaring).vacuum();
     }
 
 }
