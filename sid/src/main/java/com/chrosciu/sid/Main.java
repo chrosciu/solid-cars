@@ -2,7 +2,8 @@ package com.chrosciu.sid;
 
 public class Main {
     public static void main(String[] args) {
-        CarCare carCare = new CarCare();
+        ComprehensiveCarCareCenter careCenter = new ComprehensiveCarCareCenter();
+        CarCare carCare = new CarCare(careCenter);
         carCare.care();
     }
 }

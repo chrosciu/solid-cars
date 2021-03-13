@@ -1,7 +1,10 @@
 package com.chrosciu.sid;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class CarCare {
-    private ComprehensiveCarCareCenter careCenter = new ComprehensiveCarCareCenter();
+    private final ComprehensiveCarCareCenter careCenter;
 
     //TODO:
     // 1) Do not create careCenter object here, but inject it as a dependency (injection can be done in Main class)
