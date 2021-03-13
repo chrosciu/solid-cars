@@ -9,13 +9,10 @@ import java.util.stream.Collectors;
 public class CarSearch {
     private final CarRepository repository;
 
-    public List<Car> findByName(String name) {
-        return repository.getCars().stream().filter(c -> name.equals(c.getName())).collect(Collectors.toList());
+    public List<Car> findByCriteria(CarCriteria carCriteria) {
+        return repository.getCars().stream().filter(carCriteria::test).collect(Collectors.toList());
     }
 
-    public List<Car> findByMaxPrice(int price) {
-        return repository.getCars().stream().filter(c -> price > c.getPrice()).collect(Collectors.toList());
-    }
 
     //TODO:
     // 1) Rewrite this class that it will be possible to add more search methods (e.g by color, fuel usage etc.) without changing the class
