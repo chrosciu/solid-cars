@@ -1,6 +1,6 @@
 package com.chrosciu.liskov;
 
-public class TeslaCar extends Car {
+public class TeslaCar extends BaseCar {
     @Override
     protected void driveWithReport(int km) {
         if (Weather.getInstance().getTemperature() < 0) {
