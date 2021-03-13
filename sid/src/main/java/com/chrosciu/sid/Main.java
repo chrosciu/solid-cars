@@ -2,9 +2,11 @@ package com.chrosciu.sid;
 
 public class Main {
     public static void main(String[] args) {
-        ComprehensiveCarCareCenter careCenter = new ComprehensiveCarCareCenter();
+        LiquidCheck liquidCheck = new LiquidCheck();
         WaxCarWash waxCarWash = new WaxCarWash();
-        CarCare carCare = new CarCare(waxCarWash, careCenter, careCenter);
+        Vacuum vacuum = new Vacuum();
+        //Wash wash = new Wash();
+        CarCare carCare = new CarCare(waxCarWash, liquidCheck, vacuum);
         carCare.care();
     }
 }
