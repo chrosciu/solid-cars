@@ -1,6 +1,7 @@
 package com.chrosciu.sid;
 
-public class WaxCarWash {
+public class WaxCarWash implements Washing {
+    @Override
     public void wash() {
         washBody();
         washWindows();

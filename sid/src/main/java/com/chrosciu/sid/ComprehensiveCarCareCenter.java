@@ -1,6 +1,6 @@
 package com.chrosciu.sid;
 
-public class ComprehensiveCarCareCenter implements CarCaring {
+public class ComprehensiveCarCareCenter implements Washing, LiquidChecking, Vacuuming {
     @Override
     public void wash() {
         washBody();

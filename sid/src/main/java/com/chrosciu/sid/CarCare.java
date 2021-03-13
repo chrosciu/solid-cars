@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class CarCare {
-    private final CarCaring carCaring;
+    private final Washing washing;
+    private final LiquidChecking liquidChecking;
+    private final Vacuuming vacuuming;
 
     //TODO:
     // 1) Do not create careCenter object here, but inject it as a dependency (injection can be done in Main class)
@@ -16,8 +18,8 @@ public class CarCare {
     // 7) Adjust test from 2) accordingly to changes in 3) - 5)
 
     public void care() {
-        carCaring.checkLiquids();
-        carCaring.wash();
-        carCaring.vacuum();
+        liquidChecking.checkLiquids();
+        washing.wash();
+        vacuuming.vacuum();
     }
 }
