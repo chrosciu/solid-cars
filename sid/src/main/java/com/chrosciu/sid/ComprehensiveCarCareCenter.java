@@ -15,6 +15,8 @@ public class ComprehensiveCarCareCenter implements Washing, LiquidChecking, Vacu
         System.out.println("Washing windows");
     }
 
+    //------------------------------------
+
     @Override
     public void checkLiquids() {
         checkOil();
@@ -33,6 +35,8 @@ public class ComprehensiveCarCareCenter implements Washing, LiquidChecking, Vacu
     private void checkBrakeFluid() {
         System.out.println("Checking brake fluid");
     }
+
+    //---------------------------------------
 
     @Override
     public void vacuum() {
