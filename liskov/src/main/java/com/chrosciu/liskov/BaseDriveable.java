@@ -1,6 +1,10 @@
 package com.chrosciu.liskov;
 
-public abstract class BaseCar {
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class BaseDriveable implements Driveable {
+    private final DrivingStrategy drivingStrategy;
     protected boolean engineStarted = false;
 
     public void startEngine() {
@@ -10,7 +14,7 @@ public abstract class BaseCar {
 
     public void drive(int km) {
         checkIfEngineStarted();
-        driveWithReport(km);
+        drivingStrategy.driveWithReport(km);
     }
 
     public void stopEngine() {
@@ -21,8 +25,6 @@ public abstract class BaseCar {
     public void reportEngineState() {
         System.out.println("Engine is " + (engineStarted ? "started" : "stopped"));
     }
-
-    protected abstract void driveWithReport(int km);
 
     private void checkIfEngineStarted() {
         if (!engineStarted) {

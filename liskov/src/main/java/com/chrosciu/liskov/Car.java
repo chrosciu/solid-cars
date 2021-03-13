@@ -1,7 +1,12 @@
 package com.chrosciu.liskov;
 
-public class Car extends BaseCar {
-    protected void driveWithReport(int km) {
+import lombok.experimental.Delegate;
+
+public class Car implements Driveable {
+    @Delegate
+    private final BaseDriveable baseDriveable = new BaseDriveable(this::driveWithReport);
+
+    private void driveWithReport(int km) {
         System.out.println("Driving for: " + km + " km");
     }
 }

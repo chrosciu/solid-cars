@@ -1,7 +1,7 @@
 package com.chrosciu.liskov;
 
 public class CarRide {
-    public void perform(BaseCar car) {
+    public void perform(Driveable car) {
         car.startEngine();
         car.reportEngineState();
         car.drive(70);
